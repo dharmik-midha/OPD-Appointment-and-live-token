@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    overflow-x: hidden;
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(243, 243, 243, 0.95);
+    /* change if the mask should have another color then white */
+    z-index: 99;
+    /* makes sure it stays on top */
+  }
+  
+  #status {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    /* centers the loading animation horizontally one the screen */
+    top: 50%;
+    /* centers the loading animation vertically one the screen */
+    background-image: url("../images/loader.gif");
+    /* path to your loading animation */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+    /* is width and height divided by two */
+  }
+header{
+    font-family: 'Noto Serif', serif;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: 1s;
+}
+
+.mainheader{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainheader .logo img{
+    width: 250px;
+    height: 70px;
+    padding-left: 55px;
+    margin: 15px;
+}
+.mainheader nav{
+    width: 450px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainheader nav a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+    transition: 0.1s;
+}
+.mainheader nav a:hover{
+    color: #ff0000;
+    font-size: 20px;
+}
+.menubtn{
+    margin-right: 60px;
+}
+.mainheader button{
+    padding: 10px 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    background-image: linear-gradient(to right, #ff0000,#4bb4ff);
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .right{
+    padding-right: 60px;
+
+}
+main .left{
+  padding-left: 100px;
+  width: 40%;
+}
+.left_png{
+    position: absolute;
+    top: 25%;
+    opacity: 1;
+    animation: hidepng 0.9s forwards;
+}
+
+@keyframes hidepng{
+    from{right: 0%;}
+    to{right: -50%;}
+}
+
+.left h2{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: lighter;
+    color: #242424;
+    margin-top: 100px;
+}
+
+.left h1{
+    font-size: 50px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin: 15px 0;
+}
+.left p{
+    margin-bottom: 20px;
+
+}
+.left button{
+    padding: 15px 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    background-image: linear-gradient(to right, #ff0000,#4bb4ff);
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal_container{
+    font-family: 'Noto Serif', serif;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal{
+    background-color: white;
+    background-image: url('../images/login_modal_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 1000px;
+    height: 500px;
+    padding: 50px;
+}
+
+.modal .row .col{
+    float: left;
+    padding: 5px;
+}
+.modal .row .left{
+    width: 55%;
+}
+.modal .row .right{
+    width: 45%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=number] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  input[type=email]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  input[type=text]:focus, input[type=password],input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+
+
+  
+  /* Set a style for all buttons */
+  button {
+    background-image: linear-gradient(to right, #ff0000,#4da6ff);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-image: linear-gradient(to right,#ff0e0efa,#ff7547);
+  }
+  
+  /* Float cancel and login buttons and add an equal width */
+  .cancelbtn, .loginbtn {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Add padding to container elements */
+  .container {
+    padding: 16px;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .signup_form {
+    display: none;
+    position: absolute;
+    top: 104px;
+    width: 50%;
+    right: -50%;
+    height: 80vh;
+    animation: signupslide 0.5s forwards ease-in;
+    animation-delay: 0.9s;
+
+}
+ @keyframes signupslide{
+    from {right: -50%;}
+    to {right:1%;}
+     
+ }
+ .form_fields{
+     
+    overflow-y: scroll;
+ }
+
+.form_fields .row{
+    height: 105px;
+}
+ .form_fields .row .col{
+     float: left;
+     width: 50%;
+     padding: 5px;
+ }
+ .form_fields .row .col label{
+    display: block;
+}
+  
+ input#dob {
+    border: 2px solid grey;
+    height: 47px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #90faff, transparent);
+}
+
+
+
+
+
+/* alert box designing here  */
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  
+
+
